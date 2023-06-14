@@ -101,12 +101,9 @@ final class ListImagesView: UIViewController {
     @objc
     private func reload(_ searchBar: UISearchBar) {
         guard let name = searchBar.text,
-                name.trimmingCharacters(in: .whitespaces) != "" else {
-            print("nothing to search")
+              name.trimmingCharacters(in: .whitespaces) != "" else {
             return
         }
-
-        print(name)
         presenter?.searchPhotos(with: name)
     }
     
@@ -136,7 +133,6 @@ extension ListImagesView: UICollectionViewDelegate {
 
 extension ListImagesView: ListImagesViewProtocol {
     func reloadItems() {
-        print("ЧУДО")
         applySnapshot()
     }
 }

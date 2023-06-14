@@ -52,9 +52,3 @@ final class StorageService {
         return false
     }
 }
-
-extension Results {
-    func toArray() -> [Element] {
-        .init(self)
-    }
-}

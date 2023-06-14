@@ -56,7 +56,6 @@ final class ListImagesPresenter {
             guard let self else { return }
             switch result {
             case .success(let success):
-                print(success)
                 self.searchingPhotos = success
                 DispatchQueue.main.async {
                     self.view?.reloadItems()

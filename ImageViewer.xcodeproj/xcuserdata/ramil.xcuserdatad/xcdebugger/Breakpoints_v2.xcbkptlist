@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B471C097-3A5B-4F3F-98BC-7BBFEF3BAFD6"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "15BDBF64-3E93-4975-BB21-159C18C297FB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageViewer/ListImagesView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "setupDiffableDataSource()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "15BDBF64-3E93-4975-BB21-159C18C297FB - 8788fc55e5a6e7fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ImageViewer.ListImagesView.setupDiffableDataSource() -&gt; ()"
+                  moduleName = "ImageViewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ramil/Desktop/ImageViewer/ImageViewer/ListImagesView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "15BDBF64-3E93-4975-BB21-159C18C297FB - 6f957d18ade6fd95"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UICollectionView, Foundation.IndexPath, ImageViewer.PhotoItem) -&gt; Swift.Optional&lt;__C.UICollectionViewCell&gt; in ImageViewer.ListImagesView.setupDiffableDataSource() -&gt; ()"
+                  moduleName = "ImageViewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ramil/Desktop/ImageViewer/ImageViewer/ListImagesView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "468">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

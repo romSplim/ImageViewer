@@ -10,7 +10,7 @@ import UIKit
 final class DetailPhotoViewPresenter {
     
     //MARK: - Properties
-    weak var view: DetailPhotoViewProtocol?
+    private weak var view: DetailPhotoViewProtocol?
     private let router: DetailPhotoRouter
     private var photoDetail: PhotoItem
     private let realmRepository: FavoritePhotosRepository

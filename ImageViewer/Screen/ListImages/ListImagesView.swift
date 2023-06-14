@@ -20,7 +20,7 @@ final class ListImagesView: UIViewController {
     //MARK: - Typealias
     typealias DataSource = UICollectionViewDiffableDataSource<Section, PhotoItem>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Section, PhotoItem>
-
+    
     //MARK: - Section
     enum Section {
         case main
@@ -52,16 +52,14 @@ final class ListImagesView: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Photo"
         view.backgroundColor = .blue
         setupSearchBar()
         setupSubviews()
         setupDiffableDataSource()
         applySnapshot()
         presenter?.fetchPhotos()
-
     }
-
+    
     //MARK: - Private methods
     private func setupSearchBar() {
         let searchBar = searchController.searchBar
@@ -75,11 +73,13 @@ final class ListImagesView: UIViewController {
         dataSource = DataSource(
             collectionView: collectionView,
             cellProvider: { (collectionView, indexPath, photoItem) ->
-              UICollectionViewCell? in
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoItemCell.identifier, for: indexPath) as! PhotoItemCell
+                UICollectionViewCell? in
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoItemCell.identifier, for: indexPath) as? PhotoItemCell else {
+                    return UICollectionViewCell()
+                }
                 cell.setup(with: photoItem)
                 return cell
-        })
+            })
     }
     
     private func applySnapshot(animatingDifferences: Bool = true) {
@@ -95,7 +95,8 @@ final class ListImagesView: UIViewController {
     private func performDebouncingRequest() {
         NSObject.cancelPreviousPerformRequests(withTarget: self,
                                                selector: #selector(reload), object: searchController.searchBar)
-        perform(#selector(reload), with: searchController.searchBar, afterDelay: 1)
+        perform(#selector(reload),
+                with: searchController.searchBar, afterDelay: 1)
     }
     
     @objc
@@ -120,6 +121,7 @@ final class ListImagesView: UIViewController {
     
 }
 
+//MARK: - UICollectionViewDelegate
 extension ListImagesView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
@@ -131,12 +133,14 @@ extension ListImagesView: UICollectionViewDelegate {
     }
 }
 
+//MARK: - ListImagesViewProtocol
 extension ListImagesView: ListImagesViewProtocol {
     func reloadItems() {
         applySnapshot()
     }
 }
 
+//MARK: - UISearchResultsUpdating
 extension ListImagesView: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         performDebouncingRequest()

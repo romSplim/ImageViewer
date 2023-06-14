@@ -38,6 +38,7 @@ final class CustomTabBar: UITabBarController {
     }
 }
 
+//MARK: - TabBarItem Enum
 extension CustomTabBar {
     enum TabBarItem {
         case randomList

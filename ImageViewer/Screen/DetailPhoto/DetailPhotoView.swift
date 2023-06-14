@@ -53,7 +53,9 @@ final class DetailPhotoView: UIViewController {
     }
 }
 
+//MARK: - DetailPhotoViewProtocol
 extension DetailPhotoView: DetailPhotoViewProtocol {
+    
     func setupDetailView(with photo: PhotoItem) {
         detailView.setup(with: photo)
     }
